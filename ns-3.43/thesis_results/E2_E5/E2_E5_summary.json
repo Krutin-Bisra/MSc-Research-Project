@@ -1,0 +1,94 @@
+[
+  {
+    "tag": "E2_med_100M_10s_detailed",
+    "run_dir": "/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E2_med_100M_10s_detailed",
+    "global_fwd_mbps": 281.662,
+    "global_rtn_mbps": 185.396,
+    "per_ut_fwd_summary": {
+      "n": 100,
+      "min": 0.929341,
+      "p10": 2.821581,
+      "median": 2.8579,
+      "mean": 2.82675401,
+      "p90": 2.886745,
+      "max": 2.8890700000000002,
+      "jain": 0.9933922433381241
+    },
+    "per_ut_rtn_summary": {
+      "n": 100,
+      "min": 0.927439,
+      "p10": 1.5801290000000001,
+      "median": 1.955975,
+      "mean": 1.86826804,
+      "p90": 2.0594210000000004,
+      "max": 2.09329,
+      "jain": 0.9829489109317364
+    },
+    "per_gw_fwd_summary": {
+      "n": 2,
+      "min": 0.0,
+      "p10": 28.1662,
+      "median": 140.831,
+      "mean": 140.831,
+      "p90": 253.49579999999997,
+      "max": 281.662,
+      "jain": 0.5
+    },
+    "per_gw_rtn_summary": {
+      "n": 2,
+      "min": 0.0,
+      "p10": 18.5396,
+      "median": 92.698,
+      "mean": 92.698,
+      "p90": 166.8564,
+      "max": 185.396,
+      "jain": 0.5
+    }
+  },
+  {
+    "tag": "E5_med_1G_10s_detailed",
+    "run_dir": "/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E5_med_1G_10s_detailed",
+    "global_fwd_mbps": 282.13,
+    "global_rtn_mbps": 207.151,
+    "per_ut_fwd_summary": {
+      "n": 100,
+      "min": 0.929299,
+      "p10": 2.840884,
+      "median": 2.862105,
+      "mean": 2.8312392900000005,
+      "p90": 2.887215,
+      "max": 2.8890599999999997,
+      "jain": 0.9933636903426726
+    },
+    "per_ut_rtn_summary": {
+      "n": 100,
+      "min": 2.0499899999999998,
+      "p10": 2.0630290000000002,
+      "median": 2.0899,
+      "mean": 2.0900394,
+      "p90": 2.0917030000000003,
+      "max": 2.21981,
+      "jain": 0.999832048184984
+    },
+    "per_gw_fwd_summary": {
+      "n": 2,
+      "min": 0.0,
+      "p10": 28.213,
+      "median": 141.065,
+      "mean": 141.065,
+      "p90": 253.917,
+      "max": 282.13,
+      "jain": 0.5
+    },
+    "per_gw_rtn_summary": {
+      "n": 2,
+      "min": 0.0,
+      "p10": 20.715100000000003,
+      "median": 103.5755,
+      "mean": 103.5755,
+      "p90": 186.4359,
+      "max": 207.151,
+      "jain": 0.5
+    }
+  }
+]

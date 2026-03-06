@@ -1,0 +1,10 @@
+# ns-3 build artifacts
+ns-3.43/build/
+ns-3.43/cmake-cache/
+
+# SNS-3 raw simulation output folders (usually huge)
+ns-3.43/contrib/satellite/data/sims/
+
+# optional: waf/cmake leftovers
+**/*.o
+**/*.so

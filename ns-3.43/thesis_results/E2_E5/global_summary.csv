@@ -1,0 +1,3 @@
+experiment,global_fwd_mbps,global_rtn_mbps,run_dir
+E2_med_100M_10s_detailed,281.662,185.396,/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E2_med_100M_10s_detailed
+E5_med_1G_10s_detailed,282.13,207.151,/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E5_med_1G_10s_detailed
