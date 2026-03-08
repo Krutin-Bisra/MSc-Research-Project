@@ -21,8 +21,7 @@ def find_run_dir(tag: str) -> Path:
     p = BASE_OUT / tag
     if p.exists() and p.is_dir():
         return p
-    hits = list(BASE_OUT.glob(f"*{tag}*"))
-    hits = [h for h in hits if h.is_dir()]
+    hits = [h for h in BASE_OUT.glob(f"*{tag}*") if h.is_dir()]
     if hits:
         return hits[0]
     raise FileNotFoundError(f"Could not find output dir for tag '{tag}' under {BASE_OUT}")
@@ -35,12 +34,21 @@ def read_scalar_file(path: Path) -> pd.DataFrame:
             if not line or line.startswith("%"):
                 continue
             parts = line.split()
-            if len(parts) < 2:
-                continue
-            rows.append((int(parts[0]), float(parts[1])))
+            if len(parts) >= 2:
+                rows.append((int(parts[0]), float(parts[1])))
     return pd.DataFrame(rows, columns=["id", "value_kbps"])
 
 def kbps_to_mbps(x): return x / 1000.0
+
+def df_to_md_table(df: pd.DataFrame) -> str:
+    df = df.copy().fillna("")
+    headers = list(df.columns)
+    lines = []
+    lines.append("| " + " | ".join(headers) + " |")
+    lines.append("| " + " | ".join(["---"] * len(headers)) + " |")
+    for _, row in df.iterrows():
+        lines.append("| " + " | ".join(str(row[h]) for h in headers) + " |")
+    return "\n".join(lines)
 
 def main():
     rows = []
@@ -66,12 +74,12 @@ def main():
     df = pd.DataFrame(rows)
     df.to_csv(OUT_DIR / "global_summary.csv", index=False)
 
-    # Simple bar plot
+    # Bar plot
     plt.figure()
     x = np.arange(len(df))
-    width = 0.35
-    plt.bar(x - width/2, df["global_fwd_mbps"], width, label="FWD")
-    plt.bar(x + width/2, df["global_rtn_mbps"], width, label="RTN")
+    w = 0.35
+    plt.bar(x - w/2, df["global_fwd_mbps"], w, label="FWD")
+    plt.bar(x + w/2, df["global_rtn_mbps"], w, label="RTN")
     plt.xticks(x, df["experiment"], rotation=20, ha="right")
     plt.ylabel("Goodput (Mbps)")
     plt.title("Global Application Goodput (E1, E3, E4)")
@@ -81,20 +89,19 @@ def main():
     plt.savefig(OUT_DIR / "global_goodput_E1_E3_E4.png")
     plt.close()
 
-    # Markdown report
+    # Markdown report (no tabulate)
     md = []
     md.append("# Results: E1, E3, E4 (10s, 1600 sats)\n")
     md.append("## Global application goodput\n")
-    md.append(df.to_markdown(index=False))
-    md.append("\n")
-    md.append("## Generated figure\n")
+    md.append(df_to_md_table(df))
+    md.append("\n## Generated figure\n")
     md.append("- `global_goodput_E1_E3_E4.png`\n")
 
     (OUT_DIR / "E1_E3_E4_report.md").write_text("\n".join(md), encoding="utf-8")
     (OUT_DIR / "E1_E3_E4_summary.json").write_text(json.dumps(rows, indent=2), encoding="utf-8")
 
     print(f"\nDone. Outputs written to: {OUT_DIR}")
-    print(f"Main thesis-ready report: {OUT_DIR / 'E1_E3_E4_report.md'}")
+    print(f"Thesis-ready report: {OUT_DIR / 'E1_E3_E4_report.md'}")
 
 if __name__ == "__main__":
     main()

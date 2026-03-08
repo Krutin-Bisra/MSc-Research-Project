@@ -1,0 +1,20 @@
+[
+  {
+    "experiment": "E1_light_100M_10s",
+    "global_fwd_mbps": 47.1223,
+    "global_rtn_mbps": 49.4468,
+    "run_dir": "/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E1_light_100M_10s"
+  },
+  {
+    "experiment": "E3_heavy_100M_10s",
+    "global_fwd_mbps": 1130.59,
+    "global_rtn_mbps": 186.111,
+    "run_dir": "/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E3_heavy_100M_10s"
+  },
+  {
+    "experiment": "E4_med_500M_10s",
+    "global_fwd_mbps": 281.887,
+    "global_rtn_mbps": 207.151,
+    "run_dir": "/home/ubuntu/Desktop/ns-3.43/contrib/satellite/data/sims/spacex-study/E4_med_500M_10s"
+  }
+]
