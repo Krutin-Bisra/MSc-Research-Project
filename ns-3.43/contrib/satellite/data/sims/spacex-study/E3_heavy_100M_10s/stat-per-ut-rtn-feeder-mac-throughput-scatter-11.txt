@@ -1,0 +1,15 @@
+% output_type: 'OUTPUT_TYPE_SUM'
+% count: 1468
+% sum: 13435.6
+
+% time_sec throughput_kbps
+1 0
+2 69.376
+3 1997.78
+4 659.68
+5 1663.5
+6 2155.41
+7 1525.62
+8 2106.18
+9 1122.46
+

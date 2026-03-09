@@ -1,10 +1,50 @@
-# ns-3 build artifacts
+# ============================
+# ns-3 / SNS-3 build artifacts
+# ============================
 ns-3.43/build/
 ns-3.43/cmake-cache/
 
-# SNS-3 raw simulation output folders (usually huge)
-ns-3.43/contrib/satellite/data/sims/
-
-# optional: waf/cmake leftovers
+# Common build outputs anywhere
 **/*.o
+**/*.obj
 **/*.so
+**/*.a
+**/*.dll
+**/*.dylib
+**/*.exe
+**/*.out
+
+# CMake / Ninja leftovers
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ============================
+# Python caches
+# ============================
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+
+# ============================
+# SNS-3 raw simulation outputs
+# Ignore everything, keep only spacex-study
+# ============================
+ns-3.43/contrib/satellite/data/sims/*
+!ns-3.43/contrib/satellite/data/sims/spacex-study/
+!ns-3.43/contrib/satellite/data/sims/spacex-study/**
+
+# ============================
+# OS / editor noise
+# ============================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

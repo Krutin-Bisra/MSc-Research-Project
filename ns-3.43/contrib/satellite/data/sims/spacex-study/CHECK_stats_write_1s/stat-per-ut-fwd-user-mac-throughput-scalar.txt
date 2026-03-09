@@ -1,0 +1,4 @@
+% ut_id throughput_kbps
+2 3015.71
+1 3028.48
+
